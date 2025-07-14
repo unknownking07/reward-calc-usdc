@@ -1,18 +1,18 @@
 {
   "accountAssociation": {
-    "header": "eyJmaWQiOjQ0NjEsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgyODJkNWYzQmZjNzY5YTI3NjAxNDg3NzhBNzMzNDI5YmEzQWVmMjU2In0",
-    "payload": "eyJkb21haW4iOiJtaW5pLmJ1aWxkZXJzLmdhcmRlbiJ9",
-    "signature": "MHgyN2I2NGQxMzc2M2NlNDRlMWY0YzMyMTVhZDgwNjg4ZTBlYTcxZGQyYWFlMjJlYWUwNTUzMmM1N2RlNmM3MTdhNzQ5M2M0NWU4OTQxZTFkMTJiNjY4NWQzYTlkMzJmYjc5YzhmOTZhZTkzN2UxZWZlNzJmNWVhZjM3NGU5YWEzZDFj"
+    "header": "YOUR_HEADER_STRING",
+    "payload": "YOUR_PAYLOAD_STRING",
+    "signature": "YOUR_SIGNATURE_STRING"
   },
   "frame": {
     "version": "1",
-    "name": "Example Frame",
-    "iconUrl": "https://mini.builders.garden/icon.png",
-    "homeUrl": "https://mini.builders.garden",
-    "imageUrl": "https://mini.builders.garden/feed.png",
-    "buttonTitle": "Check this out",
-    "splashImageUrl": "https://mini.builders.garden/splash.png",
-    "splashBackgroundColor": "#ffffff",
-    "webhookUrl": "https://mini.builders.garden/api/webhook"
+    "name": "USDC Reward Checker",
+    "iconUrl": "https://reward-calc-usdc.vercel.app/preview.png",
+    "homeUrl": "https://reward-calc-usdc.vercel.app",
+    "imageUrl": "https://reward-calc-usdc.vercel.app/preview.png",
+    "buttonTitle": "Check Your Reward",
+    "splashImageUrl": "https://reward-calc-usdc.vercel.app/splash.png",
+    "splashBackgroundColor": "#7e22ce", 
+    "webhookUrl": "https://reward-calc-usdc.vercel.app/api/webhook"
   }
 }
