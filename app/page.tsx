@@ -1,16 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { sdk } from "@farcaster/miniapp-sdk";
 
 export default function Home() {
   const [rank, setRank] = useState("");
   const [reward, setReward] = useState("");
-
-  // ✅ Tell Farcaster your app is ready
-  useEffect(() => {
-    sdk.actions.ready();
-  }, []);
 
   const calculateReward = () => {
     const r = parseInt(rank);
@@ -36,6 +31,11 @@ export default function Home() {
     setReward(`🎉 Your reward is: ${rewardAmount}`);
   };
 
+  const shareMessage = () => {
+    const message = `I just checked my weekly USDC rewards and got: ${reward}\n👉 Try it here: https://farcaster.xyz/miniapps/q7eYtl8drc1F/weekly-reward-checker`;
+    sdk.actions.share({ message });
+  };
+
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-purple-800 text-white">
       <h1 className="text-3xl font-bold mb-6 text-center">
@@ -58,7 +58,15 @@ export default function Home() {
       </button>
 
       {reward && (
-        <p className="mt-6 text-xl text-white text-center">{reward}</p>
+        <div className="mt-6 text-center">
+          <p className="text-xl text-white mb-4">{reward}</p>
+          <button
+            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
+            onClick={shareMessage}
+          >
+            Share my reward 🎉
+          </button>
+        </div>
       )}
     </main>
   );
