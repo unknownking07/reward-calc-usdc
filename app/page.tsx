@@ -7,7 +7,7 @@ export default function Home() {
   const [rank, setRank] = useState("");
   const [reward, setReward] = useState("");
 
-  // ✅ Ensure splash screen is removed
+  // ✅ Call ready to remove splash screen
   useEffect(() => {
     sdk.actions.ready();
   }, []);
@@ -36,15 +36,10 @@ export default function Home() {
     setReward(`🎉 Your reward is: ${rewardAmount}`);
   };
 
-  const shareMessage = async () => {
+  const shareMessage = () => {
     const message = `I just checked my weekly USDC rewards and got: ${reward}\n👉 Try it here: https://farcaster.xyz/miniapps/q7eYtl8drc1F/weekly-reward-checker`;
-
-    try {
-      await navigator.clipboard.writeText(message);
-      alert("✅ Copied to clipboard! Paste it in Farcaster and share the hype 🚀");
-    } catch (err) {
-      alert("❌ Failed to copy. Please try again.");
-    }
+    const shareUrl = `https://warpcast.com/~/compose?text=${encodeURIComponent(message)}`;
+    window.open(shareUrl, "_blank");
   };
 
   return (
