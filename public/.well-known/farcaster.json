@@ -1,18 +1,18 @@
 {
   "accountAssociation": {
-    "header": "YOUR_HEADER_STRING",
-    "payload": "YOUR_PAYLOAD_STRING",
-    "signature": "YOUR_SIGNATURE_STRING"
+    "header": "eyJmaWQiOjI0MDQ4NiwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDc5OWZmRGFlYzM4QTg4MWI3OTNBQjE3QUYwOEI3RmE5Nzk0ZDE2QzMifQ",
+    "payload": "eyJkb21haW4iOiJyZXdhcmQtY2FsYy11c2RjLnZlcmNlbC5hcHAifQ",
+    "signature": "MHg4ZjUzYTQyNTRkNTBjMzNlOTAzODhlMDMxZDA2OTBhYjNlNDg1NGIxZWEyYTAwMTk1NmI5NDhiOGM4NWI0ZDk2NDMwMGRjNjdhZmM0YTdhNjg5YzFkZWRkMjkxMDYyYzE3M2E2OGExMjYwZDVkN2QyMzFjOWE5YzYxOGRkYTE2YzFj"
   },
   "frame": {
     "version": "1",
-    "name": "USDC Reward Checker",
-    "iconUrl": "https://reward-calc-usdc.vercel.app/preview.png",
+    "name": "Weekly Reward Checker",
+    "iconUrl": "https://reward-calc-usdc.vercel.app/icon.png",
     "homeUrl": "https://reward-calc-usdc.vercel.app",
-    "imageUrl": "https://reward-calc-usdc.vercel.app/preview.png",
-    "buttonTitle": "Check Your Reward",
+    "imageUrl": "https://reward-calc-usdc.vercel.app/image.png",
+    "buttonTitle": "Check this out",
     "splashImageUrl": "https://reward-calc-usdc.vercel.app/splash.png",
-    "splashBackgroundColor": "#7e22ce", 
+    "splashBackgroundColor": "#eeccff",
     "webhookUrl": "https://reward-calc-usdc.vercel.app/api/webhook"
   }
 }
