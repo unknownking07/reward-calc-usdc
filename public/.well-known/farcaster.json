@@ -9,7 +9,6 @@
     "name": "Weekly Reward Checker",
     "iconUrl": "https://reward-calc-usdc.vercel.app/icon.png",
     "homeUrl": "https://reward-calc-usdc.vercel.app",
-    "imageUrl": "https://reward-calc-usdc.vercel.app/image.png",
     "buttonTitle": "Check this out",
     "splashImageUrl": "https://reward-calc-usdc.vercel.app/splash.png",
     "splashBackgroundColor": "#eeccff",
