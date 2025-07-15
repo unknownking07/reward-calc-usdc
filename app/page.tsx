@@ -31,9 +31,15 @@ export default function Home() {
     setReward(`🎉 Your reward is: ${rewardAmount}`);
   };
 
-  const shareMessage = () => {
+  const shareMessage = async () => {
     const message = `I just checked my weekly USDC rewards and got: ${reward}\n👉 Try it here: https://farcaster.xyz/miniapps/q7eYtl8drc1F/weekly-reward-checker`;
-    sdk.actions.share({ message });
+
+    try {
+      await navigator.clipboard.writeText(message);
+      alert("✅ Copied to clipboard! Paste it in Farcaster and share the hype 🚀");
+    } catch (err) {
+      alert("❌ Failed to copy. Please try again.");
+    }
   };
 
   return (
@@ -51,22 +57,22 @@ export default function Home() {
       />
 
       <button
-        className="bg-white text-purple-800 font-semibold px-4 py-2 rounded hover:bg-gray-200 transition"
+        className="bg-white text-purple-800 font-semibold px-4 py-2 rounded hover:bg-gray-200 transition mb-4"
         onClick={calculateReward}
       >
         Check Reward
       </button>
 
       {reward && (
-        <div className="mt-6 text-center">
-          <p className="text-xl text-white mb-4">{reward}</p>
+        <>
+          <p className="mt-2 text-xl text-white text-center">{reward}</p>
           <button
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
+            className="mt-4 bg-blue-500 text-white font-medium px-4 py-2 rounded hover:bg-blue-600 transition"
             onClick={shareMessage}
           >
-            Share my reward 🎉
+            📤 Share on Farcaster
           </button>
-        </div>
+        </>
       )}
     </main>
   );
