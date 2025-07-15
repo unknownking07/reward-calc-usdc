@@ -7,7 +7,7 @@ export default function Home() {
   const [rank, setRank] = useState("");
   const [reward, setReward] = useState("");
 
-  // Remove splash screen
+  // Ensure splash screen disappears
   useEffect(() => {
     sdk.actions.ready();
   }, []);
@@ -36,23 +36,17 @@ export default function Home() {
     setReward(`🎉 Your reward is: ${rewardAmount}`);
   };
 
-  const shareMessage = async () => {
-    if (!reward.includes("$")) {
-      alert("Please calculate your reward before sharing.");
-      return;
-    }
+  const shareMessage = () => {
+    const message = `Just checked my weekly USDC rewards using this mini app build by @unknownking 👇
 
-    const amount = reward.replace("🎉 Your reward is: ", "").trim();
-    const message = `Just checked my weekly USDC rewards by entering my rank in this mini app — got ${amount} this week! 💸\n👉 Built by @unknownking: https://farcaster.xyz/miniapps/q7eYtl8drc1F/weekly-reward-checker\nGo check yours too 👀`;
+💰 I got: ${reward}
 
-    try {
-      await sdk.actions.cast({
-        text: message,
-      });
-    } catch (err) {
-      console.error("Failed to cast:", err);
-      alert("❌ Something went wrong while sharing. Please try again.");
-    }
+Try it yourself: https://farcaster.xyz/miniapps/q7eYtl8drc1F/weekly-reward-checker`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const shareUrl = `https://warpcast.com/~/compose?text=${encodedMessage}`;
+
+    window.open(shareUrl, "_blank");
   };
 
   return (
