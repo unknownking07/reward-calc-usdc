@@ -1,16 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { sdk } from "@farcaster/miniapp-sdk";
 
 export default function Home() {
   const [rank, setRank] = useState("");
   const [reward, setReward] = useState("");
-
-  // ✅ Initialize Farcaster SDK
-  useEffect(() => {
-    sdk.init();
-  }, []);
 
   const calculateReward = () => {
     const r = parseInt(rank);
